@@ -1,6 +1,7 @@
 package org.openblend.fejstbuk.domain;
 
 import javax.persistence.Entity;
+import java.util.Date;
 
 /**
  * @author <a href="mailto:ales.justin@jboss.org">Ales Justin</a>
@@ -8,6 +9,15 @@ import javax.persistence.Entity;
 @Entity
 public class Status extends Linked {
     private String status;
+
+    public Status() {
+    }
+
+    public Status(String status, Date timestamp) {
+
+        this.status = status;
+        setTimestamp(timestamp);
+    }
 
     public String getStatus() {
         return status;
